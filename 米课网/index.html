@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            background: url("image/homeImg.png") no-repeat;
+            background-size: cover;
+            margin-top: 60px;
+        }
+        #header .top{
+            width: 100%;
+            height: 64px;
+            background-color: #88C5E1;
+            border-bottom: 5px solid #54ABD4;
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+        img[src*=Brand]{
+            height: 40px;
+        }
+        .input-group .form-control{
+            height: 40px;
+            padding: 6px 10px;
+            background-color: #F5F5F5;
+            transition: all 0.5s;
+        }
+        .input-group .form-control:hover{
+            background-color: #ffffff;
+        }
+        .btn-default{
+            height: 40px;
+            color: #333;
+            background-color: #F5F5F5;
+            /*border: 1px solid #cccccc;*/
+            /*border-color: #cccccc;*/
+            border-left: 0px;
+        }
+        .btn-default:hover {
+            background-color: #F5F5F5;
+            color: #333;
+            border-color: #cccccc;
+        }
+        .navbar-default{
+            background-color: transparent;
+        }
+        .navbar-default .navbar-nav > li > a {
+            color: #ffffff;
+            font-size: 16px;
+            height: 38px;
+        }
+        .navbar-default .navbar-nav > li{
+            margin-left: 5px;
+        }
+        .navbar-default .navbar-nav > li:nth-child(1){
+            border-bottom: 2px solid #ffffff;
+            box-sizing: border-box;
+        }
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            color: #ffffff;
+            background-color: transparent;
+        }
+        .navbar-default .navbar-nav > li:hover{
+            border-bottom: 2px solid #ffffff;
+            box-sizing: border-box;
+        }
+        .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+             background-color: transparent;
+        }
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #ffffff;
+        }
+        .navbar-toggle{
+            margin-top: 4px;
+        }
+        @media screen and (max-width: 768px){
+            .navbar-collapse {
+                position: fixed;
+                top: 45px;
+                right: 0;
+                background-color: #ffffff;
+                width: 160px;
+
+            }
+            .navbar-default .navbar-nav > li > a {
+                display: block;
+                margin: 4px 0;
+                clear: both;
+                font-weight: normal;
+                line-height: 1.42857143;
+                color: #333;
+                white-space: nowrap;
+                padding: 12px 16px;
+                border-left: 3px solid #7d7d7d;
+                /* font-size: 1rem; */
+                cursor: pointer;
+                transition: 0.25s ease-out;
+            }
+            .navbar-default .navbar-nav > li{
+                margin-left: 5px;
+            }
+            .navbar-default .navbar-nav > li:nth-child(1){
+                border-bottom: 0px solid #ffffff;
+                box-sizing: border-box;
+            }
+            .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+                background-color: transparent;
+                color: #3a9fcd;
+                border-left: 14px solid #88C5E1;
+
+            }
+            .navbar-default .navbar-nav > li:hover{
+                border-bottom: 0px solid #ffffff;
+                box-sizing: border-box;
+            }
+        }
+        .loginbar {
+            margin: 40px auto;
+            padding: 35px 0;
+            overflow: hidden;
+        }
+        @media (min-width: 992px){
+            .loginbar {
+                padding: 96px 0;
+            }
+        }
+        .loginbar .form-control{
+            height: 40px;
+            margin: 15px 0;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #88C5E1;
+            box-shadow: 0 0.4rem 0 #54abd4, 0 0.1rem 0 rgba(255,255,255,.5) inset;
+        }
+        .btn-primary:hover {
+            top: .2rem;
+            background-color: #88C5E1;
+            box-shadow: 0 0.2rem 0 #54abd4, 0 0.1rem 0 rgba(255,255,255,.5) inset;
+        }
+        .btn-primary:active:hover{
+            background-color:#88C5E1;
+        }
+        .btn-primary:focus, .btn-primary.focus{
+            background-color: #88C5E1;
+        }
+        .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary{
+            top: .4rem;
+            background-color: #88C5E1;
+            box-shadow: 0 0.1rem 0.1rem rgba(0,0,0,.2) inset;
+        }
+        .loginbar .btn{
+            position: relative;
+            border: 0;
+        }
+        .nav-tabs {
+             border-bottom: 0px solid #ddd;
+        }
+        .nav-tabs > li > a {
+            font-size: 16px;
+            color: #ffffff;
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 0px solid transparent;
+            border-radius: 4px 4px 0 0;
+        }
+        .nav-tabs > li > a:hover {
+            border-color: transparent;
+            border-bottom: 2px solid #ffffff;
+        }
+        .nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            color: #ffffff;
+            border: 0px;
+            border-bottom: 2px solid #ffffff;
+            background-color: transparent;
+        }
+        .colorWhite{
+            color: #ffffff;
+        }
+        a.colorWhite:hover{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <!--顶部-->
+        <div class="top">
+            <div class="log col-lg-3 col-md-3 col-sm-2 col-xs-2">
+                <img class="visible-lg visible-md pull-right" src="image/Brand.png" alt=""/>
+                <img class="visible-sm pull-right" src="image/Brand-M.png" alt=""/>
+                <img class="visible-xs pull-right" src="image/Brand-S.png" alt=""/>
+            </div>
+            <div class="FromSearch col-lg-3 col-md-4 col-sm-4 col-xs-8 col-lg-offset-1">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="查找课程..." aria-describedby="...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-2 col-lg-offset-1">
+                <nav class="navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynav" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav collapse navbar-collapse" id="mynav">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">课程</a></li>
+                        <li><a href="#">公告</a></li>
+                        <li><a href="#">登录</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--登录-->
+        <div class="loginbar">
+            <div class="col-lg-2 col-md-3 col-sm-3 hidden-xs col-lg-offset-4 col-md-offset-2 col-sm-offset-1">
+                <img src="image/MiLogo.png" alt=""/>
+                <img src="image/miTitle.png" alt=""/>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-1 col-md-offset-3 col-sm-offset-2">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#Mike" aria-controls="Mike" role="tab" data-toggle="tab">登录米课</a></li>
+                    <li><a href="#Zhuce" aria-controls="Zhuce" role="tab" data-toggle="tab">注册.加入米课</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Mike">
+                        <form action="">
+                            <input type="email" class="form-control" placeholder="邮箱">
+                            <input type="password" class="form-control" placeholder="密码">
+                            <input type="checkbox"><span class="colorWhite">记住我</span>
+                            <span class="pull-right"><a class="colorWhite" href="#">忘记密码</a></span>
+                            <button class="btn btn-lg btn-primary btn-block">登录</button>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Zhuce">
+                        <form action="">
+                            <input type="email" class="form-control" placeholder="邮箱">
+                            <input type="password" class="form-control"  placeholder="密码">
+                            <button class="btn btn-lg btn-primary btn-block">注册</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jQuery.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
